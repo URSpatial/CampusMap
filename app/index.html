@@ -1,0 +1,63 @@
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no" />
+    <title>UofR Campus Map</title>
+    <link rel="icon" 
+      type="image/png" 
+      href="assets/img/CSS_favicon.png">
+    <link rel="stylesheet" href="https://js.arcgis.com/4.30/esri/themes/light/main.css" />
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"
+        integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+        
+          <script src="assets/lib/alertify/alertify.min.js"></script>
+        <script src="https://js.arcgis.com/4.30/"></script>
+
+    <script src="assets/js/campusmap.js"></script>
+    <link rel="stylesheet" href="assets/lib/alertify/alertify.core.css" />
+    <link rel="stylesheet" href="assets/lib/alertify/alertify.default.css" />
+    <link rel="stylesheet" href="assets/css/app.css" />
+</head>
+
+<body>
+    <header class="navbar">
+      
+        <div class="navbarContent">
+          <div id="title"><img id="logo" src="assets/img/uorlogo.svg">
+            Campus Map <span style="color: red;font-style: italic;">BETA</span></div>
+            <!-- Right-sided navbar li
+             nks. Hide them on small screens -->
+            <div class="right">
+            <!-- <a id="btnLogout" href="" >Log Out</a> -->
+          
+          </div>
+        </div>
+    </header>
+   
+
+      <!-- <span id="sign-in" class="action">Sign In</span> to see live traffic. -->
+  </div>
+  <div id="loadingOverlay"></div>
+    <div id="mapView" class="info"></div>
+      
+      </div> 
+    <div id="leftPanel">
+      <div id="pnlCollapse" data-state="collapsed"><span style="color:slategray">&#9650;</span> Show Layers <span style="color:slategray">&#9650;</span></div>
+      <div id="search"></div>
+      <div id="labelContainer">
+        <label class="switch">
+          <input id="labelToggle" type="checkbox">
+          <span class="slider round"></span>
+        </label>
+        <span>Show Labels</span>
+      </div>
+      <div id="basemapContainer">
+        <div class="basemap base-enabled" id="base-map"><div class="base-name">Map</div></div>
+        <div class="basemap" id="base-imagery" ><div class="base-name">Imagery</div></div>
+      </div>
+    </div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,452 @@
+html,
+body {
+    margin: 0px;
+}
+
+.navbar {
+    position: absolute;
+    top: 0px;
+    width: 100%;
+    z-index: 1;
+    overflow: hidden;
+    height:60px;
+}
+#pnlCollapse{
+  display: none;
+  height: 28px;
+  width: 100%;
+  text-align: center;
+  cursor: pointer;
+  border-top: solid darkgray 1px;
+}
+#pnlCollapse:hover {
+  background-color: #ccc;
+}
+#loadingOverlay{
+  background-color: rgba(0, 0, 0, 0.8);
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+    background-image: url(../img/paws.gif);
+    background-position: center center;
+    background-repeat: no-repeat;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    background-size: 100px;
+}
+.zoomTo{
+  display: none;
+}
+
+.esri-features__container esri-features__content-container{
+  padding-top:0px;
+}
+.esri-features__container:not(:empty) {
+  padding: 0px;
+}
+.esri-attachments__container--preview .esri-attachments__item{
+  margin-bottom: 0px;
+}
+.esri-popup__main-container.esri-widget {
+  max-width: 400px !important;
+  max-height: 400px !important;
+  /* width: 100%; */
+  /* height:80%; */
+}
+esri-attachments__item{
+  margin-bottom: 0px;
+}
+.esri-feature__content-element{
+  margin-bottom:0px;
+}
+.navbarContent {
+    letter-spacing: 4px;
+    color: #7a2426!important;
+    /* background-color: #edf2f6!important; */
+    padding: 8px 16px!important;
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+    width: 100%;
+    overflow: hidden;
+}
+#title{
+  margin: 0px;
+  font-weight: bold;
+}
+#logo{
+  width: 197px;
+  margin-right: 25px;
+}
+#mapView {
+  top: 60px;
+  bottom:0px;
+  position: absolute;
+  padding: 0;
+  margin: 0;
+  height: auto;
+  /* width: 100%; */
+  /* left: 0px; */
+  left: 300px;
+  right:0px;
+  background-color: green;
+  -webkit-transition-duration: 0.3s;
+  -moz-transition-duration: 0.3s;
+  -o-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+}
+#leftPanel {
+  background-color: #fff!important;
+  color: black;
+  position: fixed;
+  top: 60px;
+  left: 0px;
+  width: 300px;
+  -webkit-transition-duration: 0.3s;
+  -moz-transition-duration: 0.3s;
+  -o-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  bottom: 0px;
+  overflow: scroll;
+  
+}
+
+#leftPanel.slideout {
+  left: 0;
+}
+.leftPanelPage{
+  display: none;
+  -webkit-transition-duration: 0.3s;
+  -moz-transition-duration: 0.3s;
+  -o-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+}
+#basemapContainer{
+  background-color: #eee;
+    color: #444;
+    cursor: pointer;
+    padding: 8px 0px;
+    width: 100%;
+    text-align: left;
+    border: none;
+    outline: none;
+    transition: 0.4s;
+    border-bottom: solid 1px darkgray;
+    position: relative;
+    height:50px;
+}
+.basemap{
+  width:50%;
+  position: absolute;
+    top: 0px;
+    height: 100%;
+    opacity: .2;
+    cursor:pointer;
+}
+#base-map{
+
+background: url(../img/base-map.png);
+  background-size: cover;
+  
+}
+
+#base-imagery{
+
+    background: url(../img/base-drone.png);
+    background-size: cover;
+    display: inline-block;
+left:50%;
+   
+}
+.base-name{
+  
+    background-color: rgba(255, 255, 255, 0.8);
+    color: black;
+    text-align: center;
+    width: 100%;
+    padding: 0px;
+    /* display: table-cell; */
+    /* margin: auto; */
+    position: absolute;
+    bottom: 0;
+    font-size: 10pt;
+    font-weight: bold;
+    
+}
+.base-enabled{
+opacity: 1;
+}
+/* Style the buttons that are used to open and close the accordion panel */
+.accordion {
+  background-color: #eee;
+  color: #444;
+  cursor: pointer;
+  padding: 8px 0px;
+  width: 100%;
+  text-align: left;
+  border: none;
+  outline: none;
+  transition: 0.4s;
+  border-bottom: solid 1px darkgray;
+  position: relative;
+}
+.accordionIcon{
+  height:24px;
+  vertical-align: middle;
+  padding-left: 12px;
+}
+.accordionTitle{
+  padding-left: 12px;
+}
+/* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
+.active, .accordion:hover{
+  background-color: #ccc;
+}
+.pinItem:hover {
+  background-color: #ccc;
+}
+.pinItem:last-child{
+  border-bottom: none;
+}
+/* Style the accordion panel. Note: hidden by default */
+.accordionContent {
+  padding: 0 18px;
+  background-color: white;
+  /* display: none; */
+  overflow: hidden;
+  max-height: 0;
+  transition: max-height 0.2s ease-out;
+
+}
+
+.pinItem{
+  width: 100%;
+  cursor: pointer;
+  border-bottom: solid lightgray 1px;
+}
+
+
+
+.esri-search {
+width: 100%;
+border: solid 1px darkgray;
+
+}
+.esri-search__input{
+  font-size: 14pt;
+}
+#labelContainer{
+  background-color: #eee;
+    color: #444;
+    cursor: pointer;
+    padding: 8px 0px;
+    width: 100%;
+    text-align: left;
+    border: none;
+    outline: none;
+    transition: 0.4s;
+    border-bottom: solid 1px darkgray;
+    position: relative;
+}
+/* The switch - the box around the slider */
+.switch {
+  position: relative;
+    display: inline-block;
+    width: 45px;
+    height: 24px;
+    margin-left: 12px;
+    vertical-align: middle;
+}
+
+/* Hide default HTML checkbox */
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* The slider */
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 17px;
+  width: 17px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+input:checked + .slider {
+  background-color: #2196F3;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #2196F3;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(20px);
+  -ms-transform: translateX(20px);
+  transform: translateX(20px);
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+
+
+
+
+.navbarContent > .right{
+  position: absolute;
+  right: 0px;
+  margin-right: 10px;
+}
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
+}
+
+*/ .navbarContent:before,
+.navbarContent:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+
+/* #mapView.info {
+    right: 300px;
+} */
+
+
+.check {
+    
+    /* display: inline; */
+    position: absolute;
+    /* padding-left: 30px; */
+    /* margin: 5 0; */
+    cursor: pointer;
+    font-size: 16px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    font-weight: bold;
+    right: 35px;
+  }
+  
+  /* Hide the browser's default checkbox */
+  .check input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+  }
+  
+  /* Create a custom checkbox */
+  .checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 20px;
+    width: 20px;
+    background-color: #D4D4D4;
+    border-radius: 3px;
+  }
+  
+  /* On mouse-over, add a grey background color */
+  .check:hover input ~ .checkmark {
+    /* background-color: #ccc; */
+  }
+  
+  /* When the checkbox is checked, add a blue background */
+  .check input:checked ~ .checkmark {
+    background-color: #2196F3;
+  }
+  
+  /* Create the checkmark/indicator (hidden when not checked) */
+  .checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+  }
+  
+  /* Show the checkmark when checked */
+  .check input:checked ~ .checkmark:after {
+    display: block;
+  }
+  
+  /* Style the checkmark/indicator */
+  .check .checkmark:after {
+    left: 7px;
+    top: 3px;
+    width: 3px;
+    height: 10px;
+    border: solid white;
+    border-width: 0 3px 3px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+  }
+  .esri-legend__layer-caption{
+    display: none;
+  }
+  .esri-component.esri-legend.esri-widget.esri-widget--panel{
+    max-height: 139px;
+    max-width: 187px;
+  }
+  @media only screen and (max-width: 769px) {
+#leftPanel{
+  width: 100%;
+  height: 63px;
+    bottom:0px;
+    top:auto;
+    overflow: hidden;
+}
+.expanded{
+  height:calc(100% - 60px)!important;
+  overflow:auto !important;
+  
+}
+#pnlCollapse{
+  display: block;
+  
+
+}
+#mapView{
+  left:0px;
+  width: 100%;
+  bottom: 63px;
+}
+.esri-search--show-suggestions .esri-search__suggestions-menu, .esri-search--sources .esri-search__sources-menu{
+  top: auto;
+  bottom: 34px;
+  z-index: 9999;
+  position: fixed;
+}
+  }
